@@ -1,1 +1,70 @@
-<!doctype html> <head> <title>Hello, World</title></head><h3>Hello Saif, and Hello World!
+<!doctype html>
+<html>
+<head lang="en">
+	<!-- Roberto Mono and Roberto fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+	<!-- Apply fonts to CSS rules -->
+	<style>
+		* {
+			font-family: 'Roboto', sans-serif;
+			text-align: center;
+		}
+		.header {
+			padding-top: 30px;
+		}
+		.monospace {
+			font-family: 'Roboto Mono', monospace;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+	<!-- Page title -->
+	<title>Home - quinndt.me</title>
+</head>
+<body>
+	<h1 class="header">
+		Good day, danks.
+		<img alt="FeelsDankMan" src="https://cdn.frankerfacez.com/emote/536927/1">
+	</h1>
+	<p class="monospace">
+		Yo, ... uh yuh
+	</p>
+	<button class="monospace" id="button">Dont click here!</button>
+	<div class="hidden" id="hidden">
+		<p> You found me! </p>
+		<img alt="PepeA" src="https://cdn.betterttv.net/emote/60032ad030e9273179ce28cc/3x" id="image">
+	</div>
+	<script>
+		let button = document.getElementById("button")
+		let hiddens = document.getElementsByClassName("hidden")
+		let img = document.getElementById("image")
+		let originalText = "";
+		let counter = 0;
+		button.onclick = (()=>{
+			counter++;
+			if (counter === 1) {
+				Array.from(hiddens).forEach(i => i.className = "");
+				originalText = button.innerText;
+			}
+			button.innerText = originalText + " x" + counter;
+			if (counter === 10) {
+				img.alt = "monkaS";
+				img.src = "https://cdn.betterttv.net/emote/56e9f494fff3cc5c35e5287e/3x";
+			} else if (counter === 20) {
+				img.alt = "Monka";
+				img.src = "https://cdn.betterttv.net/emote/5c37cc6743a23a61c2449c73/3x";
+			} else if (counter === 30) {
+				img.alt = "pepeMeltdown";
+				img.src = "https://cdn.betterttv.net/emote/5ba84271c9f0f66a9efc1c86/3x";
+			} else if (counter === 50) {
+				img.alt = "MonkaExtreme";
+				img.src = "https://cdn.betterttv.net/emote/60a8c85f67644f1d67e8acc2/3x";
+			}
+		})
+	</script>
+</body>
+</html>
+
